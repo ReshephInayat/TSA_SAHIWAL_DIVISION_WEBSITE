@@ -29,18 +29,20 @@ function Header() {
       )}
       {/* Logo and Title */}
 
-      <div className="flex items-center gap-2">
-        <Image
-          src="/tsalogo.svg"
-          alt="TSA LOGO"
-          width={500}
-          height={500}
-          className="w-16 h-auto"
-        />
-        <h1 className="md:text-2xl text-sm font-bold text-white text-center">
-          PAKISTAN <br /> TERRITORY
-        </h1>
-      </div>
+      <Link href="/">
+        <div className="flex items-center gap-2">
+          <Image
+            src="/tsalogo.svg"
+            alt="TSA LOGO"
+            width={500}
+            height={500}
+            className="w-16 h-auto"
+          />
+          <h1 className="md:text-2xl text-sm font-bold text-white text-center">
+            PAKISTAN <br /> TERRITORY
+          </h1>
+        </div>
+      </Link>
 
       {/* Location */}
       <div className=" items-center gap-2 hidden md:flex">

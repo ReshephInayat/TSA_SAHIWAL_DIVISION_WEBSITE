@@ -36,7 +36,7 @@ const Notification: React.FC = () => {
   return (
     <AnimatePresence>
       <motion.div
-        className="fixed top-4 left-1/4 transform -translate-x-1/2 bg-gradient-to-r from-[#052146] to-black text-white z-50 shadow-2xl rounded-xl w-[95%] sm:w-[85%] md:w-[70%] lg:w-[60%] max-w-2xl"
+      className=" hidden md:block fixed top-4 left-1/4 transform -translate-x-1/2 bg-gradient-to-r from-red-600 to-black text-white z-50 shadow-2xl rounded-xl w-[95%] sm:w-[85%] md:w-[70%] lg:w-[60%] max-w-2xl"
         initial={{ y: -50, opacity: 0, scale: 0.9 }}
         animate={{ y: 0, opacity: 1, scale: 1 }}
         exit={{ y: -50, opacity: 0, scale: 0.9 }}

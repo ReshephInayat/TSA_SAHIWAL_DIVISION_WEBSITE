@@ -40,7 +40,7 @@ function SRDP() {
   }, [isModalOpen]);
 
   return (
-    <div className="w-full py-8 rounded-lg bg-gray-100 px-4 sm:px-6 lg:px-8">
+    <div className="w-full  h-full py-8 rounded-lg bg-gray-100 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 100 }}

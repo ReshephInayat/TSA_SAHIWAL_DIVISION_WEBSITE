@@ -74,7 +74,9 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="cursor-not-allowed min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+
+
       <div className="max-w-2xl mx-auto">
         {/* Header */}
         <div className="text-center mb-2 flex justify-center items-center gap-2">

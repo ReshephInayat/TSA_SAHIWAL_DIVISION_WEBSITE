@@ -59,6 +59,7 @@ function About() {
             passHref>
             <motion.div
               variants={cardVariants}
+              layout
               initial={index % 2 === 0 ? "hiddenLeft" : "hiddenRight"}
               whileInView="visible"
               viewport={{ once: true, amount: 0.5 }}

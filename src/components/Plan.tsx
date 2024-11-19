@@ -7,8 +7,8 @@ function Plan() {
   return (
     <>
       {/* <Element name="plan"> */}
-      <div className="w-full h-screen bg-gray-50 lg:px-20 px-10">
-        <h1 className="text-7xl text-red-600 font-bold text-center pt-24">
+      <div className="w-full h-full bg-gray-50 lg:px-20 px-10">
+        <h1 className="text-3xl md:text-7xl text-red-600 font-bold text-center pt-24">
           Pakistan Territory Strategic Plan
         </h1>
         <div className="mt-28">

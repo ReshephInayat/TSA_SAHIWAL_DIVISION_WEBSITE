@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { MapPinIcon, PlayIcon, PauseIcon, XIcon } from "lucide-react";
 import { data } from "@/data/About-Sahiwal";
@@ -8,7 +8,28 @@ import Image from "next/image";
 function InfoSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const audioRef = useRef<HTMLAudioElement>(null);
+
+  const Images = [
+    { src: "/sahiwal.png", alt: "Sahiwal District", width: 500, height: 400 },
+    // {
+    //   src: "/map.png",
+    //   alt: "Detailed Map of Sahiwal",
+    //   width: 1200,
+    //   height: 800,
+    // },
+    { src: "/sahiwal.png", alt: "Sahiwal District", width: 500, height: 400 },
+  ];
+
+  // Cycle through images every 3 seconds
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % Images.length);
+    }, 3000); // Change image every 3 seconds
+
+    return () => clearInterval(intervalId); // Cleanup interval on component unmount
+  }, []);
 
   const handleOpenModal = () => setIsModalOpen(true);
   const handleCloseModal = () => setIsModalOpen(false);
@@ -48,13 +69,23 @@ function InfoSection() {
               transition={{ duration: 0.5 }}
               className="flex items-center justify-center order-2 md:order-1"
             >
-              <Image
-                src="/map.png"
-                alt="Sahiwal District"
-                width={500}
-                height={400}
-                className="w-full max-w-md aspect-square object-contain rounded-xl shadow-lg"
-              />
+              {/* Animated Image Display */}
+              <motion.div
+                key={currentImageIndex} // Key ensures animation resets when image changes
+                // initial={{ opacity: 0 }}
+                // animate={{ opacity: 1 }}
+                // exit={{ opacity: 0 }}
+                // transition={{ duration: 1.5 }}
+                className="w-full h-auto rounded-xl shadow-2xl overflow-hidden"
+              >
+                <Image
+                  src={Images[currentImageIndex].src}
+                  alt={Images[currentImageIndex].alt}
+                  width={Images[currentImageIndex].width}
+                  height={Images[currentImageIndex].height}
+                  className="w-full h-auto rounded-xl shadow-2xl"
+                />
+              </motion.div>
             </motion.div>
 
             {/* Text & Action Section */}
