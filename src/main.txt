@@ -1,0 +1,322 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { useState, useRef, useEffect } from "react";
+import { Home } from "lucide-react";
+
+function SRDP() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentCard, setCurrentCard] = useState<string | null>(null);
+  const modalRef = useRef<HTMLDivElement>(null);
+
+  const handleOpenModal = (title: string) => {
+    setCurrentCard(title);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setCurrentCard(null);
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        modalRef.current &&
+        !modalRef.current.contains(event.target as Node)
+      ) {
+        handleCloseModal();
+      }
+    };
+
+    if (isModalOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isModalOpen]);
+
+  const generateSection = (
+    title: string,
+    items: { label: string; value: string }[] | string[]
+  ) => {
+    return (
+      <div>
+        <h3 className="text-xl text-red-600 font-bold">{title}</h3>
+        <ul className="space-y-2 text-gray-700">
+          {Array.isArray(items)
+            ? items.map((item, index) => (
+                <li key={index} className="flex items-center">
+                  <span className="w-2 h-2 rounded-full bg-red-400 mr-3"></span>
+                  {typeof item === "string" ? item : item.label}
+                  {typeof item !== "string" && (
+                    <span className="text-red-600 space-x-5 pl-2">
+                      {item.value}
+                    </span>
+                  )}
+                </li>
+              ))
+            : null}
+        </ul>
+      </div>
+    );
+  };
+
+  const descriptions: Record<string, JSX.Element> = {
+    Chishtian: (
+      <div className="space-y-2">
+        {generateSection("Family Structure", [
+          { label: "Joint", value: "30%" },
+          { label: "Separate", value: "20%" },
+        ])}
+
+        {generateSection("Religion", [
+          { label: "Christianity", value: "50%" },
+          { label: "Islam", value: "0%" },
+          { label: "Hinduism", value: "0%" },
+          { label: "Others", value: "0%" },
+        ])}
+
+        {generateSection("Local Languages", [
+          "Urdu",
+          "Punjabi",
+          "Pashto",
+          "Hindko",
+        ])}
+
+        {generateSection("Water Source for Household Use", [
+          { label: "Borehole", value: "10%" },
+          { label: "Govt", value: "36%" },
+          { label: "Tanker", value: "4%" },
+          { label: "Hand Pump", value: "0%" },
+        ])}
+
+        {generateSection("Fuel Source for Cooking", [
+          { label: "Gas Meter", value: "26%" },
+          { label: "Cylinder", value: "9%" },
+          { label: "Wood", value: "15%" },
+          { label: "Keosene Stove", value: "0%" },
+        ])}
+
+        {generateSection("Residence", [
+          { label: "Owned", value: "50%" },
+          { label: "Rented", value: "0%" },
+          { label: "Leased", value: "0%" },
+        ])}
+
+        {generateSection("Structure of Residence", [
+          { label: "Brick Houses", value: "50%" },
+          { label: "Mud Houses", value: "0%" },
+        ])}
+
+        {generateSection("Electricity Supply", [
+          { label: "Solar", value: "14%" },
+          { label: "Govt Meters", value: "36%" },
+          { label: "Sharing", value: "0%" },
+          { label: "Others", value: "0%" },
+        ])}
+
+        {generateSection("Age", [
+          { label: "Children", value: "79" },
+          { label: "Youth", value: "67" },
+          { label: "Above Adults", value: "72" },
+        ])}
+
+        {generateSection("Gender", [
+          { label: "Male", value: "113" },
+          { label: "Female", value: "105" },
+          { label: "Transgender", value: "0" },
+        ])}
+
+        {generateSection("Marital Status", [
+          { label: "Single", value: "120" },
+          { label: "Married", value: "98" },
+          { label: "Widow", value: "0" },
+          { label: "Divorced", value: "0" },
+          { label: "Separated", value: "0" },
+        ])}
+
+        {generateSection("CNIC", [
+          { label: "Yes", value: "121" },
+          { label: "No", value: "0" },
+        ])}
+      </div>
+    ),
+    Jinnah_Abadi: (
+      <div className="space-y-2">
+        {generateSection("Family Structure", [
+          { label: "Joint", value: "30%" },
+          { label: "Separate", value: "20%" },
+        ])}
+
+        {generateSection("Religion", [
+          { label: "Christianity", value: "50%" },
+          { label: "Islam", value: "0%" },
+          { label: "Hinduism", value: "0%" },
+          { label: "Others", value: "0%" },
+        ])}
+
+        {generateSection("Local Languages", [
+          "Urdu",
+          "Punjabi",
+          "Pashto",
+          "Hindko",
+        ])}
+
+        {generateSection("Water Source for Household Use", [
+          { label: "Borehole", value: "10%" },
+          { label: "Govt", value: "36%" },
+          { label: "Tanker", value: "4%" },
+          { label: "Hand Pump", value: "0%" },
+        ])}
+
+        {generateSection("Fuel Source for Cooking", [
+          { label: "Gas Meter", value: "26%" },
+          { label: "Cylinder", value: "9%" },
+          { label: "Wood", value: "15%" },
+          { label: "Keosene Stove", value: "0%" },
+        ])}
+
+        {generateSection("Residence", [
+          { label: "Owned", value: "50%" },
+          { label: "Rented", value: "0%" },
+          { label: "Leased", value: "0%" },
+        ])}
+
+        {generateSection("Structure of Residence", [
+          { label: "Brick Houses", value: "50%" },
+          { label: "Mud Houses", value: "0%" },
+        ])}
+
+        {generateSection("Electricity Supply", [
+          { label: "Solar", value: "14%" },
+          { label: "Govt Meters", value: "36%" },
+          { label: "Sharing", value: "0%" },
+          { label: "Others", value: "0%" },
+        ])}
+
+        {generateSection("Age", [
+          { label: "Children", value: "79" },
+          { label: "Youth", value: "67" },
+          { label: "Above Adults", value: "72" },
+        ])}
+
+        {generateSection("Gender", [
+          { label: "Male", value: "113" },
+          { label: "Female", value: "105" },
+          { label: "Transgender", value: "0" },
+        ])}
+
+        {generateSection("Marital Status", [
+          { label: "Single", value: "120" },
+          { label: "Married", value: "98" },
+          { label: "Widow", value: "0" },
+          { label: "Divorced", value: "0" },
+          { label: "Separated", value: "0" },
+        ])}
+
+        {generateSection("CNIC", [
+          { label: "Yes", value: "121" },
+          { label: "No", value: "0" },
+        ])}
+      </div>
+    ),
+  };
+
+  return (
+    <div className="w-full py-8 rounded-lg bg-gray-100 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          {[
+            "Chishtian",
+            "Jinnah_Abadi",
+            "Essa_Nagri",
+            "Chak_92_6R",
+            "Chack_95_6R",
+            "Chak_8_11/L",
+          ].map((title) => (
+            <Card
+              key={title}
+              icon={<Home />}
+              title={title}
+              onClick={() => handleOpenModal(title)}
+            />
+          ))}
+        </motion.div>
+
+        {isModalOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="fixed inset-0 flex items-center justify-center bg-black/60 backdrop-blur-sm z-50 p-4 overflow-y-auto"
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              ref={modalRef}
+              className="bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto relative"
+            >
+              <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-red-500 to-red-600"></div>
+
+              <button
+                onClick={handleCloseModal}
+                className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
+              >
+                <span className="sr-only">Close</span>
+                <svg
+                  className="w-5 h-5 text-gray-500"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+
+              <div className="p-6 sm:p-8">
+                <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                  {currentCard}
+                </h2>
+                <div className="prose max-w-none">
+                  {currentCard && descriptions[currentCard]}
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+const Card = ({
+  icon,
+  title,
+  onClick,
+}: {
+  icon: JSX.Element;
+  title: string;
+  onClick: () => void;
+}) => (
+  <motion.div
+    onClick={onClick}
+    className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl cursor-pointer transition-shadow"
+  >
+    <div className="text-2xl text-gray-800">{icon}</div>
+    <h3 className="text-xl font-semibold text-gray-900 mt-4">{title}</h3>
+  </motion.div>
+);
+
+export default SRDP;

@@ -1,0 +1,3 @@
+export const data = [
+  "Sahiwal, formerly known as Montgomery, is a city in Punjab, Pakistan. It is the 21st largest city of Pakistan by population and the administrative capital of both Sahiwal District and Sahiwal Division. Sahiwal is located approximately 180 km from the major city Lahore and 100 km from Faisalabad and lies between Lahore and Multan. Sahiwal is approximately 152 meters above the sea level. The city lies in a densely populated region between the Sutlej and Ravi rivers. The principal crops are wheat, cotton, tobacco, legumes, potato, and oil seeds. Cotton goods and lacquered woodwork are manufactured.",
+];
