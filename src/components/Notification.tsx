@@ -20,7 +20,7 @@ const Notification: React.FC = () => {
       // Auto-close the notification after 8 seconds
       const closeTimer = setTimeout(() => {
         setIsVisible(false);
-      }, 10000);
+      }, 5000);
 
       // Cleanup timers
       return () => {
@@ -36,7 +36,7 @@ const Notification: React.FC = () => {
   return (
     <AnimatePresence>
       <motion.div
-      className=" hidden md:block fixed top-4 left-1/4 transform -translate-x-1/2 bg-gradient-to-r from-red-600 to-black text-white z-50 shadow-2xl rounded-xl w-[95%] sm:w-[85%] md:w-[70%] lg:w-[60%] max-w-2xl"
+        className=" hidden md:block fixed top-4 left-1/4 transform -translate-x-1/2 bg-gradient-to-r from-red-600 to-black text-white z-50 shadow-2xl rounded-xl w-[95%] sm:w-[85%] md:w-[70%] lg:w-[60%] max-w-2xl"
         initial={{ y: -50, opacity: 0, scale: 0.9 }}
         animate={{ y: 0, opacity: 1, scale: 1 }}
         exit={{ y: -50, opacity: 0, scale: 0.9 }}
@@ -65,11 +65,19 @@ const Notification: React.FC = () => {
             </div>
             <div>
               <h3 className="text-lg sm:text-xl font-bold tracking-tight">
-                Website Under Construction
+                Website Under Development
               </h3>
               <p className="text-sm sm:text-base text-white/80 mt-1">
                 We are actively improving our site. Some features are still in
-                development. Avoid to open the site in Mobile devices.
+                development. if you see any responsiveness issue, please let us
+                know
+                <a
+                  target="_blank"
+                  href="mailto:reshephinayatofficial@gmail.com"
+                  className="text-white underline font-bold pl-2"
+                >
+                  Email Us Here
+                </a>
               </p>
             </div>
           </div>

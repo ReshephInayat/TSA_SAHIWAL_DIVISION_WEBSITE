@@ -52,6 +52,7 @@ function Hero() {
           </p>
           <div className="flex mt-8 flex-col md:flex-row gap-4 items-center">
             <Link
+              target="_blank"
               href="https://www.salvationarmypakistan.org/"
               aria-label="Learn more about the Salvation Army Pakistan"
               className="bg-red-600 text-white py-2 px-6 rounded-full inline-flex gap-2 items-center justify-center hover:bg-red-700 transition duration-300 font-bold"

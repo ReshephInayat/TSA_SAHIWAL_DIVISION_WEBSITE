@@ -53,13 +53,18 @@ function Header() {
       </div>
 
       {/* Buttons and Menu */}
+
       <div className="flex items-center gap-5">
-        <button className="md:flex gap-2 bg-red-600 text-white px-4 py-2 rounded-md hidden cursor-not-allowed">
-          Need Help <CircleHelp />
-        </button>
+        <a href="mailto:reshephinayatofficial@gmail.com">
+          
+          <button className="md:flex gap-2 bg-red-600 text-white px-4 py-2 rounded-md hidden cursor-pointer"
+          title="Email Us">
+            Need Help <CircleHelp />
+          </button>
+        </a>
         {/* <a href="https://donate.stripe.com/test_28o8ylarseJqdCEeUU">
           <button className="bg-red-600 text-white px-4 py-2 rounded-md hidden md:block">
-            🤍 Donate Us
+          🤍 Donate Us
           </button>
         </a> */}
         <Menu

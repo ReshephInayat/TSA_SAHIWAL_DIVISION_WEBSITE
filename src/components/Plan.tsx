@@ -11,7 +11,7 @@ function Plan() {
         <h1 className="text-3xl md:text-7xl text-red-600 font-bold text-center pt-24">
           Pakistan Territory Strategic Plan
         </h1>
-        <div className="mt-28">
+        <div className="mt-28 mb-28">
           <Steps />
         </div>
       </div>
