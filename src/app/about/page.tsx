@@ -1,33 +1,32 @@
 import { Card } from "@/components/Card";
+const data = [
+  {
+    name: "Major Imran George",
+    title: "Divisional Commander",
+    socialLink: "https://www.facebook.com/tsa.pakistan",
+    contact: "0302-1234567",
+  },
+  {
+    name: "Major Lubna Imran",
+    title: "D D W M",
+    socialLink: "https://www.facebook.com/tsa.pakistan",
+    contact: "0302-1234567",
+  },
+  {
+    name: "Major Joseph Masih",
+    title: "DBO",
+    socialLink: "https://www.facebook.com/tsa.pakistan",
+    contact: "0302-1234567",
+  },
+  {
+    name: "Major Zaheda",
+    title: "Assistant DBO",
+    socialLink: "https://www.facebook.com/tsa.pakistan",
+    contact: "0302-1234567",
+  },
+];
 
-export function AboutPage() {
-  const data = [
-    {
-      name: "Major Imran George",
-      title: "Divisional Commander",
-      socialLink: "https://www.facebook.com/tsa.pakistan",
-      contact: "0302-1234567",
-    },
-    {
-      name: "Major Lubna Imran",
-      title: "D D W M",
-      socialLink: "https://www.facebook.com/tsa.pakistan",
-      contact: "0302-1234567",
-    },
-    {
-      name: "Major Joseph Masih",
-      title: "DBO",
-      socialLink: "https://www.facebook.com/tsa.pakistan",
-      contact: "0302-1234567",
-    },
-    {
-      name: "Major Zaheda",
-      title: "Assistant DBO",
-      socialLink: "https://www.facebook.com/tsa.pakistan",
-      contact: "0302-1234567",
-    },
-  ];
-
+function AboutPage() {
   return (
     <div className="w-full h-full relative py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="absolute w-auto h-full left-0 rounded-lg bg-black/60 cursor-not-allowed inset-0 z-20"></div>
