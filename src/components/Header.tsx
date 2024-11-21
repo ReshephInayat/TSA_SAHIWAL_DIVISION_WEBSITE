@@ -9,6 +9,16 @@ function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
+  const MenuItems = [
+    { name: "Home", link: "/" },
+    { name: "About", link: "/about" },
+    { name: "Contact", link: "/contact" },
+    { name: "Events / News", link: "/events" },
+    { name: "New Projects", link: "/projects" },
+    { name: "Pak Territory Strategy", link: "/plan" },
+    { name: "SRDP", link: "/SRDP" },
+  ];
+
   const toggle = () => {
     setIsOpen(!isOpen);
   };
@@ -53,27 +63,28 @@ function Header() {
       </Link>
 
       {/* Location */}
-      <div className=" items-center gap-2 hidden md:flex">
-        <MapPinIcon
-          size={24}
-          className={
-            pathname == "/" || pathname == "/projects"
-              ? "text-white"
-              : "text-red-600"
-          }
-          cursor-pointer
-        />
-        <h1
-          className={
-            pathname == "/" || pathname == "/projects"
-              ? "md:text-3xl font-bold text-white font-mono"
-              : "md:text-3xl font-bold text-red-600 font-mono"
-          }
-        >
-          DHQ SAHIWAL
-        </h1>
-      </div>
-
+      <Link href="https://maps.app.goo.gl/Q3j2R6EXtQVtAwf78" target="_blank">
+        <div className=" items-center gap-2 hidden md:flex">
+          <MapPinIcon
+            size={24}
+            className={
+              pathname == "/" || pathname == "/projects"
+                ? "text-white"
+                : "text-red-600"
+            }
+            cursor-pointer
+          />
+          <h1
+            className={
+              pathname == "/" || pathname == "/projects"
+                ? "md:text-3xl font-bold text-white font-mono"
+                : "md:text-3xl font-bold text-red-600 font-mono"
+            }
+          >
+            DHQ SAHIWAL
+          </h1>
+        </div>
+      </Link>
       {/* Buttons and Menu */}
 
       <div className="flex items-center gap-5">
@@ -118,29 +129,23 @@ function Header() {
             aria-label="Close sidebar"
           />
         </div>
-        <Link href="/">
-          <button
-            onClick={() => {
-              setIsOpen(false);
-            }}
-            className="block text-white py-2"
-          >
-            Home
-          </button>
-        </Link>
-        <hr className="opacity-50 " />
-        <button className="block text-white py-3">About</button>
-        <hr className="opacity-50" />
-        <button className="block text-white py-3">Contact</button>
-        <hr className="opacity-50" />
-        <button className="block text-white py-3">Events / News</button>
-        <hr className="opacity-50" />
-        <button className="block text-white py-3">New Projects</button>
-        <hr className="opacity-50" />
-        <button className="block text-white py-3">
-          Pak Territory Strategy
-        </button>
-        <hr className="opacity-50" />
+        {
+          <ul>
+            {MenuItems.map((item, index) => (
+              <li key={index} className="py-2">
+                <Link
+                  onClick={() => {
+                    setIsOpen(false);
+                  }}
+                  href={item.link}
+                >
+                  {item.name}
+                  <hr className="opacity-40" />
+                </Link>
+              </li>
+            ))}
+          </ul>
+        }
       </nav>
     </header>
   );
