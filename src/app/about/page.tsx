@@ -1,28 +1,21 @@
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
+import React from 'react'
 
 function page() {
   return (
-    <div className="w-full h-screen">
-      <Image
-        src="/tsalogo.svg"
-        width={500}
-        height={500}
-        objectFit="cover"
-        alt="logo"
-        className="w-40 h-auto mx-auto mt-32"
-      />
-      <h1 className="text-center text-7xl italic">Coming Soon</h1>
-      <div className="flex justify-center items-center mt-6">
-        <Link href="/">
-          <button className="bg-red-600 text-white  px-4 py-3 rounded-lg">
-            Home Page
-          </button>
-        </Link>
-      </div>
+    <div className='w-full h-screen'>
+      <h1>History Of Sahiwal Division</h1>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia at repudiandae minima odio recusandae a natus ipsam praesentium necessitatibus minus?</p>
+      <h2>
+        Divisional Leaders
+      </h2>
+      <h3>Divisional Commander</h3>
+      <h3>DDWM</h3>
+      <h2>Divisional Team</h2>
+      <h3>DBO</h3>
+      
+
     </div>
-  );
+  )
 }
 
-export default page;
+export default page

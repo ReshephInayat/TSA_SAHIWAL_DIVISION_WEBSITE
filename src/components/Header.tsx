@@ -16,9 +16,9 @@ function Header() {
   return (
     <header
       className={`${
-        pathname != "/"
+        pathname == "/" || pathname == "/projects"
           ? "bg-gradient-to-r from-black to-[#052146] "
-          : "bg-gradient-to-r from-black to-[#052146] "
+          : "bg-gray-50 "
       }flex justify-between items-center px-10 py-1 relative`}
     >
       {isOpen && (
@@ -38,7 +38,15 @@ function Header() {
             height={500}
             className="w-16 h-auto"
           />
-          <h1 className="md:text-2xl text-sm font-bold text-white text-center">
+          <h1
+            className={`
+            ${
+              pathname == "/" || pathname == "/projects"
+                ? "text-white"
+                : "text-red-600"
+            }
+            md:text-2xl text-sm font-bold text-center`}
+          >
             PAKISTAN <br /> TERRITORY
           </h1>
         </div>
@@ -46,8 +54,22 @@ function Header() {
 
       {/* Location */}
       <div className=" items-center gap-2 hidden md:flex">
-        <MapPinIcon size={24} className="text-white" />
-        <h1 className="md:text-3xl font-bold text-white font-mono">
+        <MapPinIcon
+          size={24}
+          className={
+            pathname == "/" || pathname == "/projects"
+              ? "text-white"
+              : "text-red-600"
+          }
+          cursor-pointer
+        />
+        <h1
+          className={
+            pathname == "/" || pathname == "/projects"
+              ? "md:text-3xl font-bold text-white font-mono"
+              : "md:text-3xl font-bold text-red-600 font-mono"
+          }
+        >
           DHQ SAHIWAL
         </h1>
       </div>
@@ -56,9 +78,10 @@ function Header() {
 
       <div className="flex items-center gap-5">
         <a href="mailto:reshephinayatofficial@gmail.com">
-          
-          <button className="md:flex gap-2 bg-red-600 text-white px-4 py-2 rounded-md hidden cursor-pointer"
-          title="Email Us">
+          <button
+            className="md:flex gap-2 bg-red-600 text-white px-4 py-2 rounded-md hidden cursor-pointer"
+            title="Email Us"
+          >
             Need Help <CircleHelp />
           </button>
         </a>
@@ -70,7 +93,13 @@ function Header() {
         <Menu
           onClick={toggle}
           size={24}
-          className="text-white cursor-pointer"
+          className={`
+          ${
+            pathname == "/" || pathname == "/projects"
+              ? "text-white"
+              : "text-red-600"
+          }
+           cursor-pointer`}
           aria-expanded={isOpen}
         />
       </div>
