@@ -1,4 +1,4 @@
-import InfoSection from "@/components/About-Sahiwal";
+import InfoSection from "@/components/InfoSection";
 import About from "@/components/About";
 import Corps from "@/components/Corps";
 import Hero from "@/components/Hero";
