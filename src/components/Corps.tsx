@@ -70,11 +70,12 @@ function Corps() {
   return (
     <div className="bg-gray-100 min-h-screen py-16">
       <div className="w-full px-6 lg:px-16 max-w-screen-xl mx-auto">
-        <h2 className="font-extrabold text-3xl lg:text-6xl text-center text-red-600 mb-16">
+        <h2 className="font-extrabold text-3xl lg:text-6xl text-center text-red-600 mb-2">
           Corps
         </h2>
+        <div className="w-24 h-1 bg-gradient-to-r from-transparent to-red-700  mx-auto rounded-full" />
         <motion.ul
-          className="grid grid-cols-1 lg:grid-cols-2 gap-10"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-10 mt-16"
           variants={containerVariants}
           initial="hidden"
           whileInView="show"

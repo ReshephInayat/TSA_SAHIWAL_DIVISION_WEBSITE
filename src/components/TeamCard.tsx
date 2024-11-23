@@ -11,7 +11,7 @@ interface CardProps {
   imageUrl: string;
 }
 
-export function Card({
+export function TeamCard({
   name,
   title,
   imageUrl,
@@ -19,12 +19,12 @@ export function Card({
   contact,
 }: CardProps) {
   return (
-    <div className="w-full max-w-xs mx-auto bg-white rounded-3xl shadow-lg overflow-hidden relative transition-all duration-300 hover:scale-105">
+    <div className="w-full h-[380px] max-w-xs mx-auto bg-white rounded-3xl shadow-lg overflow-hidden relative transition-all duration-300 hover:scale-105">
       {/* Star Background Shape */}
       <div className="absolute top-0 left-0 w-full h-48 bg-gradient-to-b from-black to-red-600 transform -skew-y-6 translate-y-[-20%]" />
 
       {/* Profile Content */}
-      <div className="relative z-10 p-4 sm:p-6 flex flex-col items-center">
+      <div className="relative top-10 z-10 p-4 sm:p-6 flex flex-col items-center">
         {/* Profile Image */}
         <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-full overflow-hidden border-4 border-white shadow-lg mb-4">
           <Image

@@ -1,0 +1,42 @@
+import { Card } from "@/components/Card";
+const data = [
+  {
+    name: "Major Imran George",
+    title: "Divisional Commander (DC)",
+    socialLink: "https://www.facebook.com/tsa.pakistan",
+    contact: "0302-1234567",
+  },
+  {
+    name: "Major Lubna Imran",
+    title: "Divisional Director of Women Ministries (DDWM)",
+    socialLink: "https://www.facebook.com/tsa.pakistan",
+    contact: "0302-1234567",
+  },
+  // {
+  //   name: "Major Joseph Masih",
+  //   title: "DBO",
+  //   socialLink: "https://www.facebook.com/tsa.pakistan",
+  //   contact: "0302-1234567",
+  // },
+  // {
+  //   name: "Major Zaheda",
+  //   title: "Assistant DBO",
+  //   socialLink: "https://www.facebook.com/tsa.pakistan",
+  //   contact: "0302-1234567",
+  // },
+];
+
+
+
+ {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 justify-center mt-10">
+        {data.map((item, index) => (
+          <Card
+            key={index}
+            imageUrl="/tsalogo.svg"
+            name={item.name}
+            title={item.title}
+            socialLink={item.socialLink}
+            contact={item.contact}
+          />
+        ))}
+      </div> */}

@@ -11,7 +11,7 @@ function Header() {
 
   const MenuItems = [
     { name: "Home", link: "/" },
-    { name: "About", link: "/about" },
+    { name: "About Us", link: "/about" },
     { name: "Contact", link: "/contact" },
     { name: "Events / News", link: "/events" },
     { name: "New Projects", link: "/projects" },
@@ -132,7 +132,7 @@ function Header() {
         {
           <ul>
             {MenuItems.map((item, index) => (
-              <li key={index} className="py-2">
+              <li key={index} className="py-3">
                 <Link
                   onClick={() => {
                     setIsOpen(false);
@@ -140,7 +140,7 @@ function Header() {
                   href={item.link}
                 >
                   {item.name}
-                  <hr className="opacity-40" />
+                  <hr className="opacity-20" />
                 </Link>
               </li>
             ))}

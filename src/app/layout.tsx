@@ -25,7 +25,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${RaleWay.className} antialiased `}>
         <main>
-          <NextTopLoader color="red" height={5} />
+          <NextTopLoader color="red" />
           <Notification />
           <Header />
           {children}
