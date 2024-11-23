@@ -9,8 +9,13 @@ export const slideUp = {
 };
 
 
+// Motion variants
 export const cardVariants = {
   hiddenLeft: { x: -100, opacity: 0 },
   hiddenRight: { x: 100, opacity: 0 },
-  visible: { x: 0, opacity: 1, transition: { duration: 0.8, ease: "easeOut" } },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: { duration: 0.5, ease: "easeInOut" }, // Reduced duration for smoothness
+  },
 };

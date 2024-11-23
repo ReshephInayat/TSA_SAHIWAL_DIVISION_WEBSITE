@@ -14,7 +14,7 @@ function HeroClient() {
         variants={fadeIn}
         initial="hidden"
         animate="visible"
-        className="flex justify-center w-full md:w-auto relative z-10"
+        className="flex justify-center mt-10 w-full md:w-auto relative z-10"
       >
         <Image
           src="/tsalogo.svg"
