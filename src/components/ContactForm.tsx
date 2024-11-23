@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import { Send, Loader2, Phone } from "lucide-react";
 import { contactFormSchema, type ContactFormData } from "@/types/types";
 import { ZodError } from "zod"; // Import ZodError for strong typing
@@ -43,8 +43,9 @@ const ContactPage = () => {
     }
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = async () => {
+    //e.ReactEvent<HTMLFormElement>
+    // e.preventDefault();
 
     if (!validateForm()) return;
 
@@ -74,8 +75,8 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="relative cursor-not-allowed min-h-screen bg-gray-100 px-4 sm:px-6 lg:px-8">
-      <div className="w-full h-full absolute inset-0 z-10 top-0 left-0 bg-black/60"></div>
+    <div className="py-20 relative cursor-not-allowed min-h-screen bg-gray-100 px-4 sm:px-6 lg:px-8">
+      {/* <div className="w-full h-full absolute inset-0 z-10 top-0 left-0 bg-black/60"></div> */}
 
       <div className="max-w-2xl mx-auto">
         {/* Header */}
@@ -108,7 +109,12 @@ const ContactPage = () => {
             </div>
           )}
 
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form
+            action="https://formspree.io/f/movqnqda"
+            method="POST"
+            onSubmit={handleSubmit}
+            className="space-y-6"
+          >
             {/* Name Field */}
             <div>
               <label
