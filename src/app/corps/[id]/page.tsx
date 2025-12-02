@@ -114,24 +114,25 @@ export default function CorpsDetailPage({ params }: PageProps) {
           {/* Carousel Images */}
           <div className="relative h-96 md:h-[500px] overflow-hidden">
             {corpsImages.map((img, index) => (
-              <div
-                key={index}
-                className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
-                  index === currentImageIndex ? "opacity-100" : "opacity-0"
-                }`}
-              >
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
-                <div 
-                  className="w-full h-full"
-                  style={{
-                    backgroundImage: `url('${img}')`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    filter: 'brightness(0.9)'
-                  }}
-                />
-              </div>
-            ))}
+  <div
+    key={index}
+    className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+      index === currentImageIndex ? "opacity-100" : "opacity-0"
+    }`}
+  >
+    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
+    <div 
+      className="w-full h-full"
+      style={{
+        backgroundImage: `url('${img}')`,
+        backgroundSize: 'cover', // This makes the image cover the entire container
+        backgroundPosition: 'center', // This centers the image
+        backgroundRepeat: 'no-repeat', // Prevents the image from repeating
+        filter: 'brightness(0.9)'
+      }}
+    />
+  </div>
+))}
             
             {/* Carousel Navigation */}
             <button

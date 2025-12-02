@@ -20,10 +20,10 @@ export const cards = [
   {
     id: 3,
     image: "/tsalogo.svg",
-    title: "New Plantation Projects",
+    title: "Activities",
     description:
-      "New Plantation Projects are a part of our mission to create a sustainable environment for future generations.",
-    extraInfo: "Want To Learn More About Our Projects?",
+      "Our activities focus on community development, education, healthcare, and empowerment to uplift the underprivileged sections of society.",
+    extraInfo: "Want To Learn More About Our Activities?",
     href: "/projects",
   },
   {
