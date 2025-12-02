@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Notification from "@/components/Notification";
+// import Notification from "@/components/Notification";
 import NextTopLoader from "nextjs-toploader";
 import { Raleway } from "next/font/google";
 
@@ -26,7 +26,7 @@ export default function RootLayout({
       <body className={`${RaleWay.className} antialiased `}>
         <main>
           <NextTopLoader color="red" />
-          <Notification />
+          {/* <Notification /> */}
           <Header />
           {children}
           <Footer />

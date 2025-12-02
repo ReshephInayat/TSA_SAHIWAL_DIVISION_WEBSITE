@@ -1,10 +1,42 @@
+// Add image data for each community
+export const communityImages: Record<string, string[]> = {
+  Chishtian: [
+    "/images/chishtian-1.jpg",
+    "/images/chishtian-2.jpg",
+    "/images/chishtian-3.jpg",
+  ],
+  Jinnah_Abadi: [
+    "/images/jinnah-abadi-1.jpg",
+    "/images/jinnah-abadi-2.jpg",
+  ],
+  Essa_Nagri: [
+    "/images/essa-nagri-1.jpg",
+    "/images/essa-nagri-2.jpg",
+    "/images/essa-nagri-3.jpg",
+  ],
+  Chak_92_6R: [
+    "/images/chak-92-1.jpg",
+    "/images/chak-92-2.jpg",
+  ],
+  Chak_95_6R: [
+    "/images/chak-95-1.jpg",
+    "/images/chak-95-2.jpg",
+    "/images/chak-95-3.jpg",
+  ],
+  Chak_8_11L: [
+    "/images/chak-8-1.jpg",
+    "/images/chak-8-2.jpg",
+  ],
+};
+
+
 const generateSection = (
   title: string,
   items: { label: string; value: string }[] | string[]
 ) => {
   return (
-    <div>
-      <h3 className="text-xl text-red-600 font-bold">{title}</h3>
+    <div className="mb-6">
+      <h3 className="text-xl text-red-600 font-bold mb-3">{title}</h3>
       <ul className="space-y-2 text-gray-700">
         {Array.isArray(items)
           ? items.map((item, index) => (
@@ -13,7 +45,7 @@ const generateSection = (
                 {typeof item === "string" ? item : item.label}
                 {typeof item !== "string" && (
                   <span className="text-red-600 space-x-5 pl-2">
-                     {item.value}
+                     {item.value}
                   </span>
                 )}
               </li>
@@ -23,7 +55,6 @@ const generateSection = (
     </div>
   );
 };
-
 export const descriptions: Record<string, JSX.Element> = {
   Chishtian: (
     <div className="space-y-2">
@@ -500,3 +531,4 @@ export const descriptions: Record<string, JSX.Element> = {
     </div>
   ),
 };
+

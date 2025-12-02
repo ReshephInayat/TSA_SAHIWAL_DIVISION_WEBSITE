@@ -14,7 +14,7 @@ import { TbBuildingCommunity } from "react-icons/tb";
 import { PiCloverBold } from "react-icons/pi";
 
 export const data = [
-  { icon: FaUsers, value: 482224, label: "Total Population" },
+  { icon: FaUsers, value: 495075, label: "Total Population" },
   { icon: FaChurch, value: 140, label: "Total Churches" },
   { icon: FaMosque, value: 222, label: "Total Mosques" },
   { icon: FaSchool, value: 1204, label: "Total Schools" },

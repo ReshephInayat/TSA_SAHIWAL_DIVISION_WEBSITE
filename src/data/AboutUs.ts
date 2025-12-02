@@ -2,7 +2,7 @@ export const aboutData = {
   header: {
     title: "Divisional Leaders",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore culpa assumenda, minima maxime alias porro ipsa necessitatibus laborum magni natus, id tempora optio deleniti voluptate earum nisi dolorem corporis unde.",
+      "Meet the dedicated leaders steering our division towards excellence and community impact. Their vision and commitment inspire us all. ",
     leaders: [
       {
         name: "Major Imran George ( DC )",
@@ -16,14 +16,14 @@ export const aboutData = {
   },
   team: [
     {
-      name: "Major Joseph Masih",
+      name: "Captain Victor Jan",
       title: "Divisional Business Officer (DBO)",
       socialLink: "https://www.facebook.com/tsa.pakistan",
       contact: "0302-1234567",
     },
     {
-      name: "Major Zaheeda",
-      title: "Divisional Finance Officer (DFO)",
+      name: "Captain Naseem Victor",
+      title: "Divisional Family Officer (DFO)",
       socialLink: "https://www.facebook.com/tsa.pakistan",
       contact: "0302-1234567",
     },

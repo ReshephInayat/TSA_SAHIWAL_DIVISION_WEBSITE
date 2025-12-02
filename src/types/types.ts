@@ -19,11 +19,20 @@ export const contactFormSchema = z.object({
 export type ContactFormData = z.infer<typeof contactFormSchema>;
 
 
-export type DetailsProps = {
+// types/types.ts
+
+
+
+export interface DetailsProps {
+  id: number;
   name: string;
-  category?: string;
-  description: string;
+  category: string;
   officers: string;
   distance: string;
   condition: string;
-};
+  buildingSize: string;
+  buildingScore: number;
+  description: string;
+  pageLink: string;
+  images: string[];
+}

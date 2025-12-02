@@ -1,7 +1,8 @@
+// app/SRDP/page.tsx
 import SRDP from "@/components/SRDP";
 import React from "react";
 
-function page() {
+function Page() {
   return (
     <div className="w-full h-full bg-gray-100">
       <h1 className="md:text-7xl text-4xl text-red-600 font-bold text-center pt-10 mb-8">
@@ -12,4 +13,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;
