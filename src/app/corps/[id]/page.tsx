@@ -280,7 +280,7 @@ export default function CorpsDetailPage({ params }: PageProps) {
                   <TrendingUp className="w-6 h-6 text-green-600" />
                 </div>
                 <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wider">
-                 Centage 
+                 Centage Income
                 </h3>
               </div>
               <div className="flex items-center gap-3">
