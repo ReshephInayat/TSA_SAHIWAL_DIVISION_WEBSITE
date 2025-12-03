@@ -45,165 +45,148 @@ function Steps() {
   const descriptions: Record<string, JSX.Element> = {
     "Financial Sustainability": (
       <div className="space-y-6">
-        <div>
-          <h3 className="text-2xl font-bold text-red-600 mb-4 flex items-center">
-            <span className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center mr-2">
-              <span className="text-red-600">✓</span>
-            </span>
-            Strengths
-          </h3>
-          <ul className="space-y-2 text-gray-700">
-            <li className="flex items-center">
-              <span className="w-2 h-2 rounded-full bg-red-400 mr-3"></span>
-              Stewardship training at the Divisional level
-            </li>
-            <li className="flex items-center">
-              <span className="w-2 h-2 rounded-full bg-red-400 mr-3"></span>
-              Mini Home League initiated by DDWM
-            </li>
-            {/* Add other strengths similarly */}
-          </ul>
-        </div>
-        <div>
-          <h3 className="text-2xl font-bold text-red-600 mb-4 flex items-center">
-            <span className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center mr-2">
-              <span className="text-red-600">!</span>
-            </span>
-            Challenges
-          </h3>
-          <ul className="space-y-2 text-gray-700">
-            <li className="flex items-center">
-              <span className="w-2 h-2 rounded-full bg-red-400 mr-3"></span>
-              Most families are in debt
-            </li>
-            <li className="flex items-center">
-              <span className="w-2 h-2 rounded-full bg-red-400 mr-3"></span>
-              Essa Nagri Corps building is{" "}
-              <span className="text-red-600 font-semibold ml-1">Rented</span>
-            </li>
-          </ul>
-        </div>
+        <ul className="space-y-3 text-gray-700">
+          <li className="flex items-start">
+            <span className="w-2 h-2 rounded-full bg-red-400 mr-3 mt-2 flex-shrink-0"></span>
+            <span>To launch and Strengthen Self Support Income Generating Projects through SRDP</span>
+          </li>
+          <li className="flex items-start">
+            <span className="w-2 h-2 rounded-full bg-red-400 mr-3 mt-2 flex-shrink-0"></span>
+            <span>Stewardship Seminar & workshops by DBO</span>
+          </li>
+          <li className="flex items-start">
+            <span className="w-2 h-2 rounded-full bg-red-400 mr-3 mt-2 flex-shrink-0"></span>
+            <span>Junior Soldiers giving</span>
+          </li>
+          <li className="flex items-start">
+            <span className="w-2 h-2 rounded-full bg-red-400 mr-3 mt-2 flex-shrink-0"></span>
+            <span>Reformed Cartridge System in families</span>
+          </li>
+          <li className="flex items-start">
+            <span className="w-2 h-2 rounded-full bg-red-400 mr-3 mt-2 flex-shrink-0"></span>
+            <span>Reformed Marriage Bans, Freedom letters and other means</span>
+          </li>
+          <li className="flex items-start">
+            <span className="w-2 h-2 rounded-full bg-red-400 mr-3 mt-2 flex-shrink-0"></span>
+            <span>New Entrepreneurship & Skills formation</span>
+          </li>
+          <li className="flex items-start">
+            <span className="w-2 h-2 rounded-full bg-red-400 mr-3 mt-2 flex-shrink-0"></span>
+            <span>HF & SD</span>
+          </li>
+        </ul>
       </div>
     ),
-    // Add other descriptions with similar styling
     Discipleship: (
       <div className="space-y-6">
-        <div>
-          <ul className="space-y-2 text-gray-700">
-            <li className="flex items-center">
-              <span className="w-2 h-2 rounded-full bg-red-400 mr-3"></span>
-              We are conducting workshops and seminars
-            </li>
-            <li className="flex items-center">
-              <span className="w-2 h-2 rounded-full bg-red-400 mr-3"></span>
-              Corps officers are playing a key role in this
-            </li>
-            {/* Add other strengths similarly */}
-          </ul>
-        </div>
-        <div>
-          <ul className="space-y-2 text-gray-700">
-            <li className="flex items-center">
-              <span className="w-2 h-2 rounded-full bg-red-400 mr-3"></span>
-              AMOs have additional tasks
-            </li>
-            <li className="flex items-center">
-              <span className="w-2 h-2 rounded-full bg-red-400 mr-3"></span>
-              The Programme and Spiritual Life Development Department is also
-              playing a vital role in all aspects of discipleship
-            </li>
-          </ul>
-        </div>
+        <ul className="space-y-3 text-gray-700">
+          <li className="flex items-start">
+            <span className="w-2 h-2 rounded-full bg-red-400 mr-3 mt-2 flex-shrink-0"></span>
+            <span>Sunday school Classes</span>
+          </li>
+          <li className="flex items-start">
+            <span className="w-2 h-2 rounded-full bg-red-400 mr-3 mt-2 flex-shrink-0"></span>
+            <span>Junior Soldier Classes</span>
+          </li>
+          <li className="flex items-start">
+            <span className="w-2 h-2 rounded-full bg-red-400 mr-3 mt-2 flex-shrink-0"></span>
+            <span>Bible Study Group</span>
+          </li>
+          <li className="flex items-start">
+            <span className="w-2 h-2 rounded-full bg-red-400 mr-3 mt-2 flex-shrink-0"></span>
+            <span>Small Groups</span>
+          </li>
+          <li className="flex items-start">
+            <span className="w-2 h-2 rounded-full bg-red-400 mr-3 mt-2 flex-shrink-0"></span>
+            <span>Corps Cadets Classes</span>
+          </li>
+          <li className="flex items-start">
+            <span className="w-2 h-2 rounded-full bg-red-400 mr-3 mt-2 flex-shrink-0"></span>
+            <span>Theology through TSA Doctrine</span>
+          </li>
+        </ul>
       </div>
     ),
     Growth: (
       <div className="space-y-6">
-        <div>
-          <ul className="space-y-2 text-gray-700">
-            <li className="flex items-center">
-              <span className="w-2 h-2 rounded-full bg-red-400 mr-3"></span>
-              The number of soldiers is increasing
-            </li>
-            <li className="flex items-center">
-              <span className="w-2 h-2 rounded-full bg-red-400 mr-3"></span>
-              The number of corps is also increasing
-            </li>
-            {/* Add other strengths similarly */}
-          </ul>
-        </div>
-        <div>
-          <ul className="space-y-2 text-gray-700">
-            <li className="flex items-center">
-              <span className="w-2 h-2 rounded-full bg-red-400 mr-3"></span>
-              The number of junior soldiers is also increasing
-            </li>
-            <li className="flex items-center">
-              <span className="w-2 h-2 rounded-full bg-red-400 mr-3"></span>
-              The number of adherents is also increasing
-            </li>
-          </ul>
-        </div>
+        <ul className="space-y-3 text-gray-700">
+          <li className="flex items-start">
+            <span className="w-2 h-2 rounded-full bg-red-400 mr-3 mt-2 flex-shrink-0"></span>
+            <span>Youth Empowerment</span>
+          </li>
+          <li className="flex items-start">
+            <span className="w-2 h-2 rounded-full bg-red-400 mr-3 mt-2 flex-shrink-0"></span>
+            <span>Call to be a soldier</span>
+          </li>
+          <li className="flex items-start">
+            <span className="w-2 h-2 rounded-full bg-red-400 mr-3 mt-2 flex-shrink-0"></span>
+            <span>Role & Responsibilities of local officers / being a good steward</span>
+          </li>
+          <li className="flex items-start">
+            <span className="w-2 h-2 rounded-full bg-red-400 mr-3 mt-2 flex-shrink-0"></span>
+            <span>New Plantation at Chishtian</span>
+          </li>
+          <li className="flex items-start">
+            <span className="w-2 h-2 rounded-full bg-red-400 mr-3 mt-2 flex-shrink-0"></span>
+            <span>Family Devotion & household Worship</span>
+          </li>
+          <li className="flex items-start">
+            <span className="w-2 h-2 rounded-full bg-red-400 mr-3 mt-2 flex-shrink-0"></span>
+            <span>Corps mission Development Plans</span>
+          </li>
+        </ul>
       </div>
     ),
     Relationship: (
       <div className="space-y-6">
-        <div>
-          <ul className="space-y-2 text-gray-700">
-            <li className="flex items-center">
-              <span className="w-2 h-2 rounded-full bg-red-400 mr-3"></span>
-              The relationship between officers and soldiers is strong
-            </li>
-            <li className="flex items-center">
-              <span className="w-2 h-2 rounded-full bg-red-400 mr-3"></span>
-              The relationship between corps officers and corps members is
-              strong
-            </li>
-            {/* Add other strengths similarly */}
-          </ul>
-        </div>
-        <div>
-          <ul className="space-y-2 text-gray-700">
-            <li className="flex items-center">
-              <span className="w-2 h-2 rounded-full bg-red-400 mr-3"></span>
-              The relationship between corps members is strong
-            </li>
-            <li className="flex items-center">
-              <span className="w-2 h-2 rounded-full bg-red-400 mr-3"></span>
-              The relationship between soldiers and adherents is strong
-            </li>
-          </ul>
-        </div>
+        <ul className="space-y-3 text-gray-700">
+          <li className="flex items-start">
+            <span className="w-2 h-2 rounded-full bg-red-400 mr-3 mt-2 flex-shrink-0"></span>
+            <span>Godly Couples, Family life</span>
+          </li>
+          <li className="flex items-start">
+            <span className="w-2 h-2 rounded-full bg-red-400 mr-3 mt-2 flex-shrink-0"></span>
+            <span>Events in each Corps focused on peacebuilding, Family values, and Social unity</span>
+          </li>
+          <li className="flex items-start">
+            <span className="w-2 h-2 rounded-full bg-red-400 mr-3 mt-2 flex-shrink-0"></span>
+            <span>Christian Marriage</span>
+          </li>
+          <li className="flex items-start">
+            <span className="w-2 h-2 rounded-full bg-red-400 mr-3 mt-2 flex-shrink-0"></span>
+            <span>The Church and the Christian Marriage Act 1872</span>
+          </li>
+          <li className="flex items-start">
+            <span className="w-2 h-2 rounded-full bg-red-400 mr-3 mt-2 flex-shrink-0"></span>
+            <span>The Church and the Christian marriage Act 1869</span>
+          </li>
+        </ul>
       </div>
     ),
-    "Leader Development": (
+    "Leaders Development": (
       <div className="space-y-6">
-        <div>
-          <ul className="space-y-2 text-gray-700">
-            <li className="flex items-center">
-              <span className="w-2 h-2 rounded-full bg-red-400 mr-3"></span>
-              We are conducting workshops and seminars for the development of
-              leaders
-            </li>
-            <li className="flex items-center">
-              <span className="w-2 h-2 rounded-full bg-red-400 mr-3"></span>
-              Corps officers are playing a key role in this
-            </li>
-            {/* Add other strengths similarly */}
-          </ul>
-        </div>
-        <div>
-          <ul className="space-y-2 text-gray-700">
-            <li className="flex items-center">
-              <span className="w-2 h-2 rounded-full bg-red-400 mr-3"></span>
-              AMOs have additional tasks
-            </li>
-            <li className="flex items-center">
-              <span className="w-2 h-2 rounded-full bg-red-400 mr-3"></span>
-              The Programme and Spiritual Life Development Department is also
-              playing a vital role in all aspects of leader development
-            </li>
-          </ul>
-        </div>
+        <ul className="space-y-3 text-gray-700">
+          <li className="flex items-start">
+            <span className="w-2 h-2 rounded-full bg-red-400 mr-3 mt-2 flex-shrink-0"></span>
+            <span>CLD</span>
+          </li>
+          <li className="flex items-start">
+            <span className="w-2 h-2 rounded-full bg-red-400 mr-3 mt-2 flex-shrink-0"></span>
+            <span>Further Study</span>
+          </li>
+          <li className="flex items-start">
+            <span className="w-2 h-2 rounded-full bg-red-400 mr-3 mt-2 flex-shrink-0"></span>
+            <span>online Courses</span>
+          </li>
+          <li className="flex items-start">
+            <span className="w-2 h-2 rounded-full bg-red-400 mr-3 mt-2 flex-shrink-0"></span>
+            <span>Capacity building tools on officers Meeting</span>
+          </li>
+          <li className="flex items-start">
+            <span className="w-2 h-2 rounded-full bg-red-400 mr-3 mt-2 flex-shrink-0"></span>
+            <span>Financial Trainings</span>
+          </li>
+        </ul>
       </div>
     ),  
   };
@@ -239,8 +222,8 @@ function Steps() {
           />
           <Card
             icon={<MdLeaderboard />}
-            title="Leader Development"
-            onClick={() => handleOpenModal("Leader Development")}
+            title="Leaders Development"
+            onClick={() => handleOpenModal("Leaders Development")}
           />
         </motion.div>
 

@@ -31,7 +31,7 @@ export const data = [
   { icon: PiCloverBold, value: 50943, label: "Centage of 2025 November" },
   { icon: FaUsers, value: 26, label: "Sahiwal Officers" },
   { icon: RiGroupFill, value: 6, label: "Divisional Team" },
-  { icon: RiGroupFill, value: 0, label: "Bank Statement" },
+  { icon: RiGroupFill, value:1139893, label: "Cash In Bank" },
   { icon: FaHandsHelping, value: 191334, label: "Helping Hand" },
   { icon: FaLeaf, value: 43855, label: "Harvest Festivals" },
   { icon: GiSelfLove, value: 71150, label: "Self Denial" },
