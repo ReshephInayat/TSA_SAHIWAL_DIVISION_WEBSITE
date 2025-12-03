@@ -280,12 +280,12 @@ export default function CorpsDetailPage({ params }: PageProps) {
                   <TrendingUp className="w-6 h-6 text-green-600" />
                 </div>
                 <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wider">
-                  Percentage Income
+                 Centage 
                 </h3>
               </div>
               <div className="flex items-center gap-3">
-                <p className={`text-2xl md:text-3xl font-bold ${getIncomeColor(corps.incomePercentage).split(' ')[0]}`}>
-                  {corps.incomePercentage}%
+                <p className={`text-2xl md:text-3xl font-bold ${getIncomeColor(corps.incomePercentage)}`}>
+                  {corps.incomePercentage}
                 </p>
                 <div className={`px-3 py-1 rounded-full text-sm font-medium ${getIncomeColor(corps.incomePercentage)}`}>
                   {corps.incomePercentage >= 90 ? 'Excellent' : 
