@@ -2,7 +2,21 @@
 "use client";
 
 import { data } from "@/data/Crops";
-import { ArrowLeft, ChevronLeft, ChevronRight, MapPin, Users, Building, Ruler, CheckCircle, AlertCircle, Home, } from "lucide-react";
+import { 
+  ArrowLeft, 
+  ChevronLeft, 
+  ChevronRight, 
+  MapPin, 
+  Users, 
+  Building, 
+  Ruler, 
+  CheckCircle, 
+  AlertCircle, 
+  Home,
+  Shield,
+  Users2,
+  TrendingUp
+} from "lucide-react";
 import { notFound, useRouter } from "next/navigation";
 import { useState, useEffect, use } from "react";
 
@@ -87,6 +101,14 @@ export default function CorpsDetailPage({ params }: PageProps) {
     }
   };
 
+  // Format income percentage color
+  const getIncomeColor = (percentage: number) => {
+    if (percentage >= 90) return "text-emerald-600 bg-emerald-100";
+    if (percentage >= 75) return "text-green-600 bg-green-100";
+    if (percentage >= 60) return "text-yellow-600 bg-yellow-100";
+    return "text-red-600 bg-red-100";
+  };
+
   if (isLoading) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
@@ -114,25 +136,25 @@ export default function CorpsDetailPage({ params }: PageProps) {
           {/* Carousel Images */}
           <div className="relative h-96 md:h-[500px] overflow-hidden">
             {corpsImages.map((img, index) => (
-  <div
-    key={index}
-    className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
-      index === currentImageIndex ? "opacity-100" : "opacity-0"
-    }`}
-  >
-    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
-    <div 
-      className="w-full h-full"
-      style={{
-        backgroundImage: `url('${img}')`,
-        backgroundSize: 'cover', // This makes the image cover the entire container
-        backgroundPosition: 'center', // This centers the image
-        backgroundRepeat: 'no-repeat', // Prevents the image from repeating
-        filter: 'brightness(0.9)'
-      }}
-    />
-  </div>
-))}
+              <div
+                key={index}
+                className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+                  index === currentImageIndex ? "opacity-100" : "opacity-0"
+                }`}
+              >
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
+                <div 
+                  className="w-full h-full"
+                  style={{
+                    backgroundImage: `url('${img}')`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat',
+                    filter: 'brightness(0.9)'
+                  }}
+                />
+              </div>
+            ))}
             
             {/* Carousel Navigation */}
             <button
@@ -206,52 +228,75 @@ export default function CorpsDetailPage({ params }: PageProps) {
             </p>
           </div>
 
-          {/* Stats Grid with enhanced design */}
+          {/* Stats Grid with enhanced design - NEW STRUCTURE */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
-            {/* Appointed Officers */}
+            {/* Soldiers */}
             <div className="group p-6 bg-gradient-to-br from-blue-50 to-white rounded-2xl border border-blue-100 hover:border-blue-200 transition-all duration-300 hover:scale-[1.02]">
               <div className="flex items-center gap-3 mb-4">
                 <div className="p-3 bg-blue-100 rounded-xl group-hover:bg-blue-200 transition-colors duration-300">
-                  <Users className="w-6 h-6 text-blue-600" />
+                  <Shield className="w-6 h-6 text-blue-600" />
                 </div>
                 <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wider">
-                  Appointed Officers
+                  Soldiers
                 </h3>
               </div>
               <p className="text-2xl md:text-3xl font-bold text-blue-600 mb-2">
-                {corps.officers.split(' ')[0].trim()}
+                {corps.soldiers}
               </p>
-              <p className="text-lg text-blue-500">
-                {corps.officers.split(' ')[1]?.trim()}
-                
-                {corps.officers.split(' ')[2]?.trim()}
-
-              </p>
-                <p className="text-lg text-blue-500">
-                {corps.officers.split('&')[1]?.trim()}
-              </p>
-              <p className="text-sm text-gray-500 mt-2">Currently Appointed</p>
+              <p className="text-sm text-gray-500">Active Soldiers</p>
             </div>
 
-            {/* Distance from HQ */}
+            {/* Societies & Outposts */}
+            <div className="group p-6 bg-gradient-to-br from-purple-50 to-white rounded-2xl border border-purple-100 hover:border-purple-200 transition-all duration-300 hover:scale-[1.02]">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-3 bg-purple-100 rounded-xl group-hover:bg-purple-200 transition-colors duration-300">
+                  <Users2 className="w-6 h-6 text-purple-600" />
+                </div>
+                <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wider">
+                  Societies & Outposts
+                </h3>
+              </div>
+              <div className="flex gap-4">
+                <div>
+                  <p className="text-2xl md:text-3xl font-bold text-purple-600 mb-1">
+                    {corps.societyOutpost.societies}
+                  </p>
+                  <p className="text-sm text-gray-500">Societies</p>
+                </div>
+                <div className="w-px bg-gray-200" />
+                <div>
+                  <p className="text-2xl md:text-3xl font-bold text-purple-600 mb-1">
+                    {corps.societyOutpost.outposts}
+                  </p>
+                  <p className="text-sm text-gray-500">Outposts</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Percentage Income */}
             <div className="group p-6 bg-gradient-to-br from-green-50 to-white rounded-2xl border border-green-100 hover:border-green-200 transition-all duration-300 hover:scale-[1.02]">
               <div className="flex items-center gap-3 mb-4">
                 <div className="p-3 bg-green-100 rounded-xl group-hover:bg-green-200 transition-colors duration-300">
-                  <MapPin className="w-6 h-6 text-green-600" />
+                  <TrendingUp className="w-6 h-6 text-green-600" />
                 </div>
                 <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wider">
-                  Distance from DHQ
+                  Percentage Income
                 </h3>
               </div>
-              <p className="text-2xl md:text-3xl font-bold text-green-600 mb-2">
-                {corps.distance}
-              </p>
-              <p className="text-sm text-gray-500">
-                {corps.distance === "Located at DHQ" ? "Central Location" : "Kilometers away"}
-              </p>
+              <div className="flex items-center gap-3">
+                <p className={`text-2xl md:text-3xl font-bold ${getIncomeColor(corps.incomePercentage).split(' ')[0]}`}>
+                  {corps.incomePercentage}%
+                </p>
+                <div className={`px-3 py-1 rounded-full text-sm font-medium ${getIncomeColor(corps.incomePercentage)}`}>
+                  {corps.incomePercentage >= 90 ? 'Excellent' : 
+                   corps.incomePercentage >= 75 ? 'Good' : 
+                   corps.incomePercentage >= 60 ? 'Average' : 'Needs Improvement'}
+                </div>
+              </div>
+              <p className="text-sm text-gray-500 mt-2">Monthly Target Achievement</p>
             </div>
 
-            {/* Condition */}
+            {/* Condition - Moved from Structure */}
             <div className="group p-6 bg-gradient-to-br from-yellow-50 to-white rounded-2xl border border-yellow-100 hover:border-yellow-200 transition-all duration-300 hover:scale-[1.02]">
               <div className="flex items-center gap-3 mb-4">
                 <div className="p-3 bg-yellow-100 rounded-xl group-hover:bg-yellow-200 transition-colors duration-300">
@@ -285,24 +330,62 @@ export default function CorpsDetailPage({ params }: PageProps) {
               </div>
               <p className="text-sm text-gray-500 mt-2">Facility status</p>
             </div>
+          </div>
 
-            {/* Church Building Size */}
-            <div className="group p-6 bg-gradient-to-br from-purple-50 to-white rounded-2xl border border-purple-100 hover:border-purple-200 transition-all duration-300 hover:scale-[1.02]">
+          {/* Secondary Stats Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+            {/* Appointed Officers */}
+            <div className="group p-6 bg-gradient-to-br from-indigo-50 to-white rounded-2xl border border-indigo-100 hover:border-indigo-200 transition-all duration-300 hover:scale-[1.02]">
               <div className="flex items-center gap-3 mb-4">
-                <div className="p-3 bg-purple-100 rounded-xl group-hover:bg-purple-200 transition-colors duration-300">
-                  <Ruler className="w-6 h-6 text-purple-600" />
+                <div className="p-3 bg-indigo-100 rounded-xl group-hover:bg-indigo-200 transition-colors duration-300">
+                  <Users className="w-6 h-6 text-indigo-600" />
                 </div>
                 <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wider">
-                  Building Size
+                  Appointed Officers
                 </h3>
               </div>
-              <p className="text-2xl md:text-3xl font-bold text-purple-600 mb-2">
+              <p className="text-xl font-semibold text-indigo-600 mb-2">
+                {corps.officers}
+              </p>
+              <p className="text-sm text-gray-500">Currently Appointed</p>
+            </div>
+
+            {/* Distance from HQ */}
+            <div className="group p-6 bg-gradient-to-br from-orange-50 to-white rounded-2xl border border-orange-100 hover:border-orange-200 transition-all duration-300 hover:scale-[1.02]">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-3 bg-orange-100 rounded-xl group-hover:bg-orange-200 transition-colors duration-300">
+                  <MapPin className="w-6 h-6 text-orange-600" />
+                </div>
+                <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wider">
+                  Distance from DHQ
+                </h3>
+              </div>
+              <p className="text-2xl md:text-3xl font-bold text-orange-600 mb-2">
+                {corps.distance}
+              </p>
+              <p className="text-sm text-gray-500">
+                {corps.distance === "Located at DHQ" ? "Central Location" : "Kilometers away"}
+              </p>
+            </div>
+
+            {/* Church Building Size */}
+            <div className="group p-6 bg-gradient-to-br from-pink-50 to-white rounded-2xl border border-pink-100 hover:border-pink-200 transition-all duration-300 hover:scale-[1.02]">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-3 bg-pink-100 rounded-xl group-hover:bg-pink-200 transition-colors duration-300">
+                  <Ruler className="w-6 h-6 text-pink-600" />
+                </div>
+                <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wider">
+                  Church Hall
+                </h3>
+              </div>
+              <p className="text-2xl md:text-3xl font-bold text-pink-600 mb-2">
                 {corps.buildingSize}
               </p>
               <p className="text-sm text-gray-500">Total area</p>
             </div>
           </div>
 
+          {/* Building Condition Score - Updated */}
           <div className="p-6 md:p-8 bg-gradient-to-r from-gray-50 to-white rounded-2xl border border-gray-200">
             <div className="flex items-center justify-between mb-6">
               <h3 className="text-xl font-bold text-gray-900">

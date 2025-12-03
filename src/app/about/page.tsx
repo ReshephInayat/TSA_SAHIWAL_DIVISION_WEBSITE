@@ -12,7 +12,7 @@ import { aboutData } from "@/data/AboutUs";
 // Dhq Sahiwal data
 const dhqData = {
   title: "Divisional Headquarters Sahiwal",
-  description: "The Divisional Headquarters Sahiwal serves as the central hub for The Salvation Army's operations in the Sahiwal division. It is dedicated to providing administrative support, coordinating community outreach programs, and managing various social services aimed at uplifting the local population.",
+  description: "The Divisional Headquarters Sahiwal serves as the central hub for The Salvation Army's operations in the Sahiwal division. It is dedicated to providing administrative and spiritual support, coordinating community outreach programs, and managing various social services aimed at uplifting the corps and local community.",
   details: [
     {
       icon: <MapPin className="w-5 h-5" />,
@@ -242,7 +242,7 @@ const AboutPage = () => {
           className="space-y-4 mt-16"
         >
           <h1 className="text-3xl md:text-4xl lg:text-6xl text-red-600 text-center font-semibold tracking-tight">
-            Team
+           Divisional Team
           </h1>
           <div className="flex justify-center">
             <div className="w-24 h-1 bg-gradient-to-r from-red-700 to-red-500 rounded-full" />

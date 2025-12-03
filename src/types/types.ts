@@ -23,6 +23,7 @@ export type ContactFormData = z.infer<typeof contactFormSchema>;
 
 
 
+// types/types.ts
 export interface DetailsProps {
   id: number;
   name: string;
@@ -35,4 +36,10 @@ export interface DetailsProps {
   description: string;
   pageLink: string;
   images: string[];
+  soldiers: number;
+  societyOutpost: {
+    societies: number;
+    outposts: number;
+  };
+  incomePercentage: number;
 }

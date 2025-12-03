@@ -27,6 +27,30 @@ export const aboutData = {
       socialLink: "https://www.facebook.com/tsa.pakistan",
       contact: "0302-1234567",
     },
+    {
+      name: "Captain Naqqash Aftab",
+      title: "Area Mission Officer (AMO)",
+      socialLink: "https://www.facebook.com/tsa.pakistan",
+      contact: "0302-1234567",
+    },
+    {
+      name: "Captain Shamila Naqqash",
+      title: "Area Mission Officer (AMO)",
+      socialLink: "https://www.facebook.com/tsa.pakistan",
+      contact: "0302-1234567",
+    },
+    {
+      name: "Captain Shahbaz Akbar",
+      title: "Area Mission Officer (AMO)",
+      socialLink: "https://www.facebook.com/tsa.pakistan",
+      contact: "0302-1234567",
+    },
+    {
+      name: "Captain Uzma Shahbaz",
+      title: "Area Mission Officer (AMO)",
+      socialLink: "https://www.facebook.com/tsa.pakistan",
+      contact: "0302-1234567",
+    },
   ],
   image: "/Leaders.jpg",
 };
